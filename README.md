@@ -2,9 +2,29 @@
 
 This is just a little scraper to read the Nottingham Term Times from the Nottingham City website and create Calendar Events for the term starts, ends and half-terms.
 
+## Choose your poison
+
+There are 3 different scrapers, each with the same basic functionality - but they each have a key use:
+
+### scraper-csv
+
+This scraper will output a CSV File containing the term dates
+
+### scraper-ics
+
+This scraper will output an ICS Calendar file containing the term dates
+
+### scraper-365
+
+This is the main scraper and will, once authenticated with your Office Account, post calendar events on your behalf. It _will_ check to see if the entry already exists - there's nothing worse than duplicate entries.
+
+## Using scraper-365
+
+The scraper is easy to use, but it does require authentication (as mentioned). This means it also requires some information from your Office Account. I have used the O365 library to achieve this. It's not ideal, but it works - and you will not need to run the scraper very often as it picks up a good 3 years worth of term dates at a time.
+
 ## Credentials
 
-This requires credentials to run - it needs a file called `credentials.json` creating with the following content:
+Credentials (and all other personal data) is stored in a file called `credentials.json` with the following content:
 
 ```js
 {
